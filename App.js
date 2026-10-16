@@ -5,6 +5,7 @@ import Form from './Components/Form';
 
 export default function App() {
   const [ modalVisible, setModalVisible]  = useState(false)
+  const [pacientes, setPacientes] = useState([])
 
   return (
     <SafeAreaProvider >
@@ -13,7 +14,11 @@ export default function App() {
         <Pressable style={styles.btnNuevaCita} onPress={() => setModalVisible(true)}>
           <Text style={styles.btnTextoNuevaCita}>New Appointment</Text>
         </Pressable>
-        <Form visible={modalVisible} setModalVisible={setModalVisible} />
+        <Form 
+        visible={modalVisible} 
+        setModalVisible={setModalVisible}
+        pacientes ={pacientes}
+        setPacientes = {setPacientes}/> 
       </SafeAreaView>
     </SafeAreaProvider>
   );
